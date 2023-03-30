@@ -56,7 +56,9 @@ services:
         ipv4_address: 172.30.0.4
 
   health:
-    image: ./health
+    build:
+      context: ./health
+    image: health-image
     container_name: health-container
     ports:
       - 8110:8110
