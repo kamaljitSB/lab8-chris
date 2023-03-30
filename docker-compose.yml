@@ -1,6 +1,5 @@
 version: "3"
 services:
-
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
     environment:
@@ -11,7 +10,7 @@ services:
     networks:
       appnetwork:
         ipv4_address: 172.30.0.5
-  
+
   kafka:
     image: confluentinc/cp-kafka:latest
     depends_on:
@@ -56,6 +55,15 @@ services:
       appnetwork:
         ipv4_address: 172.30.0.4
 
+  health:
+    image: ./health
+    container_name: health-container
+    ports:
+      - 8110:8110
+    networks:
+      appnetwork:
+        ipv4_address: 172.30.0.7
+
   mysql:
     build:
       context: ./mysql
@@ -67,8 +75,8 @@ services:
       appnetwork:
         ipv4_address: 172.30.0.11
     volumes:
-    - mysql-file:/var/lib/mysql
-  
+      - mysql-file:/var/lib/mysql
+
 networks:
   appnetwork:
     external: true
