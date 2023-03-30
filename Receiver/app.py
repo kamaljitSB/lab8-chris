@@ -79,8 +79,8 @@ def sell(body):
     process_event(body, 'sell')
     return NoContent, 201
 
-def health(body):
-    return NoContent, 200
+def health():
+    return "200 OK", 200
 
 app = connexion.FlaskApp(__name__, specification_dir='')
 app.add_api("openapi.yml", base_path="/receiver", strict_validation=True, validate_responses=True)

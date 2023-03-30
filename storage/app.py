@@ -172,6 +172,8 @@ def get_sells(timestamp):
     print(data)
     return data, 200
 
+def health():
+    return "200 OK", 200
 
 app = connexion.FlaskApp(__name__, specification_dir='')
 app.add_api('openapi.yaml',base_path="/storage" ,strict_validation=True, validate_responses=True)
