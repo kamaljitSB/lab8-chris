@@ -4,7 +4,7 @@ info:
   version: "1.0.0"
   title: ACIT 3855 API
   contact:
-    email: <your email address>
+    email: kamaljitbhuller@gmail.com
 tags:
   - name: devices
     description: Operations available to connected devices
@@ -17,15 +17,15 @@ paths:
       operationId: app.buy
       description: Adds a new buy event to the system
       responses:
-        '201':
+        "201":
           description: Buy event created
-        '400':
-          description: 'Invalid input, object invalid'
+        "400":
+          description: "Invalid input, object invalid"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Buy'
+              $ref: "#/components/schemas/Buy"
         description: Buy event to add
   /sell:
     post:
@@ -35,15 +35,15 @@ paths:
       operationId: app.sell
       description: Adds a new sell event to the system
       responses:
-        '201':
+        "201":
           description: Sell event created
-        '400':
-          description: 'Invalid input, object invalid'
+        "400":
+          description: "Invalid input, object invalid"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Sell'
+              $ref: "#/components/schemas/Sell"
         description: Sell event to add
   /health:
     get:
@@ -53,7 +53,7 @@ paths:
       operationId: app.health
       description: Returns 200
       responses:
-        '200':
+        "200":
           description: Returned status
 components:
   schemas:
